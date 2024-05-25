@@ -5,14 +5,13 @@
 #define RST_PIN 9
 
 void releaseKey();
-void pressKey(uint8_t key);
+void pressKey(uint8_t key, uint8_t key2);
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 
 uint8_t buf[8] = {0}; /* Keyboard report buffer */
 
-int cardCount = 0; 
-bool isLocked = true;
+bool isLocked = true; // Variable for if Screen is locked or not
 
 void setup() 
 {
@@ -81,8 +80,6 @@ void loop(){
 
         isLocked = false;
 
-        cardCount++;
-
         delay(500);
       }    
   }      
@@ -93,6 +90,7 @@ void loop(){
               
 }
 
+// Function to press the desired keys
 void pressKey(uint8_t key, uint8_t key2)
 {
   delay(50);
@@ -106,6 +104,7 @@ void pressKey(uint8_t key, uint8_t key2)
   delay(50);
 }
 
+// Function to release the key press so they won't be infinitely pressed
 void releaseKey()
 {
   buf[0] = 0;
