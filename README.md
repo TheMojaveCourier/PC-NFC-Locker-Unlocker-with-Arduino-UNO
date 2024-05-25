@@ -1,7 +1,7 @@
 # PC-NFC-Locker-Unlocker-with-Arduino-UNO
 
 Unlcok your computer using NFC tags or cards with an Arduino UNO.
-This is a university project, fell free to use and cotribute.
+This is a university project, fell free to use and contribute.
 ----
 
 ## Requirements:
